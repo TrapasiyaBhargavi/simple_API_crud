@@ -4,7 +4,19 @@ const port=8001;
 
 const app=express();
 
-const db=require("./config/mongoose")
+// const db=require("./config/mongoose")
+
+const mongoose=require("mongoose");
+
+mongoose.connect("mongodb+srv://bhargavitrapasiya12:OTUnLTQlfQAxcUJ2@cluster0.djlmy.mongodb.net/apidata",{
+    useNewUrlParser:true,
+    useUnifiedTopology:true
+}).then((res)=>{
+    console.log("db is connected");
+})
+.catch((err)=>{
+    console.log("db is not connected")
+})
 
 const passport=require("passport");
 const jwtstrategy=require("./config/passport-jwt");

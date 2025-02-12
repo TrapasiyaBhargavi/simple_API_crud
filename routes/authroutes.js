@@ -2,7 +2,9 @@ const express=require("express");
 
 const routes=express.Router();
 
-const userauthctl=require("../controller/authcontroller")
+const userauthctl=require("../controller/authcontroller");
+
+
 
 routes.post("/signup",userauthctl.signup);
 
